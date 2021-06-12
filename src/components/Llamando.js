@@ -1,3 +1,8 @@
-export const Llamando = () => {
-  return <span className="mensaje off">Llamando...</span>;
+export const Llamando = (props) => {
+  const {
+    activar: { mensaje },
+  } = props;
+  return (
+    <span className={`mensaje ${mensaje ? "" : " off"}`}>Llamando...</span>
+  );
 };
