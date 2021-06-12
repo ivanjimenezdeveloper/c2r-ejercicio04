@@ -1,8 +1,8 @@
 export const Acciones = (props) => {
   const { numeroTelefono, activar, llamar, colgar } = props;
   return (
-    <div class="acciones">
-      <span class="numero">{numeroTelefono}</span>
+    <div className="acciones">
+      <span className="numero">{numeroTelefono}</span>
       {/* <!-- El botón de llamar debe tener la clase "activo" cuando --> */}
       {/* <!-- el número de teléfono tiene 9 cifras --> */}
       <a

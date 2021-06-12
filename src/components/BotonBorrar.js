@@ -1,8 +1,12 @@
 export const BotonBorrar = (props) => {
-  const { borrarNumero } = props;
+  const { borrarNumero, activar } = props;
   return (
     <li>
-      <button className="big" onClick={borrarNumero}>
+      <button
+        className="big"
+        onClick={borrarNumero}
+        disabled={activar.teclado ? false : true}
+      >
         borrar
       </button>
     </li>

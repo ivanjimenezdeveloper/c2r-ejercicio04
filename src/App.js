@@ -11,6 +11,7 @@ function App() {
     llamar: false,
     colgar: false,
     mensaje: false,
+    teclado: true,
   });
 
   const anyadirNumero = (numero) => {
@@ -28,11 +29,12 @@ function App() {
     setNumeroTelefono("");
     setActivar({ ...activar, llamar: false });
   };
+
   const colgar = (e) => {
     if (e !== undefined) {
       e.preventDefault();
     }
-    setActivar({ llamar: true, colgar: false, mensaje: false });
+    setActivar({ llamar: true, colgar: false, mensaje: false, teclado: true });
   };
   const activarMensaje = () => {
     setTimeout(() => {
@@ -42,12 +44,12 @@ function App() {
 
   const llamar = (e) => {
     e.preventDefault();
-    setActivar({ llamar: false, colgar: true, mensaje: true });
+    setActivar({ llamar: false, colgar: true, mensaje: true, teclado: false });
     activarMensaje();
   };
 
   return (
-    <div class="contenedor">
+    <div className="contenedor">
       {/* El siguiente elemento se oculta añadiéndole la clase "off"  */}
       <Llamando activar={activar} />
       <main className="telefono">
@@ -58,10 +60,11 @@ function App() {
                 numero={numero}
                 key={numero}
                 anyadirNumero={anyadirNumero}
+                activar={activar}
               />
             ))}
 
-            <BotonBorrar borrarNumero={borrarNumero} />
+            <BotonBorrar borrarNumero={borrarNumero} activar={activar} />
           </ol>
         </div>
         <Acciones
