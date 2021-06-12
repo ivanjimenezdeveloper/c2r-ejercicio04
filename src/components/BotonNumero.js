@@ -1,8 +1,14 @@
 export const BotonNumero = (props) => {
-  const { numero } = props;
+  const { numero, anyadirNumero } = props;
   return (
     <li>
-      <button>{numero}</button>
+      <button
+        onClick={() => {
+          anyadirNumero(numero);
+        }}
+      >
+        {numero}
+      </button>
     </li>
   );
 };

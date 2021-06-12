@@ -1,7 +1,10 @@
-export const BotonBorrar = () => {
+export const BotonBorrar = (props) => {
+  const { borrarNumero } = props;
   return (
     <li>
-      <button className="big">borrar</button>
+      <button className="big" onClick={borrarNumero}>
+        borrar
+      </button>
     </li>
   );
 };
