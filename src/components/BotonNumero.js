@@ -1,6 +1,5 @@
 export const BotonNumero = (props) => {
   const { numero, anyadirNumero, activar } = props;
-  debugger;
   return (
     <li>
       <button
